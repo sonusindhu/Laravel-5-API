@@ -34,6 +34,23 @@ class productController extends Controller {
             'products' => $products,
             'status_code' => 200
         ));
-        exit;
     }
+    
+    
+    public function getbycategory($id=null) {
+        if($id==null){
+            return response()->json(array(
+                'error' => true,
+                'products' => array(),
+                'status_code' => 0
+            ));
+        }
+        $products = Product::where(array('category_id' => $id))->get();
+        return response()->json(array(
+            'error' => false,
+            'products' => $products,
+            'status_code' => 200
+        ));
+    }
+    
 }
