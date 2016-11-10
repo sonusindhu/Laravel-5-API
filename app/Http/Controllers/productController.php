@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Model\Product;
+use App\Model\Category;
 
 //use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -11,7 +12,7 @@ use Illuminate\Http\Response;
 class productController extends Controller {
     
     public function index() {
-        $products = Product::all(array('id','name','price','category_id'));
+        $products = Product::all(); //array('id','name','price','category_id')
         return response()->json(array(
             'error' => false,
             'products' => $products,

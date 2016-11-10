@@ -15,8 +15,9 @@ class Product extends Model
         'name', 'price', 'category_id',
     ];
     
-    protected function category(){
-        return $this->belongsTo('Category'); // links this->state_id to state.id
+    protected function categories(){
+        return $this->belongsTo('Category' , 'category_id'); // links this->category_id to category.id
+//        return $this->belongsTo(\App\Model\Category::class);
     }
 
     /**
