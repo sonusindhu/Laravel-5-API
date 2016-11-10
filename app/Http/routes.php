@@ -37,3 +37,5 @@ Route::get('/', function () {
 Route::get('/v1/products/', 'productController@index');
 Route::get('/v1/products/{id?}', 'productController@get');
 
+Route::get('/v1/categories', 'categoryController@index');
+
