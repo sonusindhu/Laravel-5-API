@@ -33,9 +33,11 @@ Route::get('/', function () {
 //exit;
 //}]);
 
-// API routes...
+// Product API routes
 Route::get('/v1/products/', 'productController@index');
 Route::get('/v1/products/{id?}', 'productController@get');
 
+// Category API routes
 Route::get('/v1/categories', 'categoryController@index');
+Route::get('/v1/category/{id?}', 'categoryController@get');
 

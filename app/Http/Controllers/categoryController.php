@@ -19,4 +19,24 @@ class categoryController extends Controller {
         ));
     }
     
+    
+    public function get($id=null) {
+        if($id==null){
+            return response()->json(array(
+                'error' => true,
+                'products' => array(),
+                'status_code' => 0
+            ));
+            exit;
+        }
+        $category = Category::find($id , array('id','name'));
+        return response()->json(array(
+            'error' => false,
+            'products' => $category,
+            'status_code' => 200
+        ));
+        exit;
+    }
+    
+    
 }
