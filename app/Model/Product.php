@@ -14,6 +14,10 @@ class Product extends Model
     protected $fillable = [
         'name', 'price', 'category_id',
     ];
+    
+    protected function category(){
+        return $this->belongsTo('Category'); // links this->state_id to state.id
+    }
 
     /**
      * The attributes that should be hidden for arrays.

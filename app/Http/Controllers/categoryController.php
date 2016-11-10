@@ -14,7 +14,7 @@ class categoryController extends Controller {
         $categories = Category::all(array('id','name'));
         return response()->json(array(
             'error' => false,
-            'products' => $categories,
+            'categories' => $categories,
             'status_code' => 200
         ));
     }
@@ -24,7 +24,7 @@ class categoryController extends Controller {
         if($id==null){
             return response()->json(array(
                 'error' => true,
-                'products' => array(),
+                'category' => array(),
                 'status_code' => 0
             ));
             exit;
@@ -32,7 +32,7 @@ class categoryController extends Controller {
         $category = Category::find($id , array('id','name'));
         return response()->json(array(
             'error' => false,
-            'products' => $category,
+            'category' => $category,
             'status_code' => 200
         ));
         exit;

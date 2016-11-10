@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 class productController extends Controller {
     
     public function index() {
-        $products = Product::all();
+        $products = Product::all(array('id','name','price','category_id'));
         return response()->json(array(
             'error' => false,
             'products' => $products,
@@ -27,7 +27,7 @@ class productController extends Controller {
             ));
             exit;
         }
-        $products = Product::find($id);
+        $products = Product::find($id , array('id','name','price','category_id'));
         return response()->json(array(
             'error' => false,
             'products' => $products,
