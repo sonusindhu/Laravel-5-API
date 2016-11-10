@@ -45,7 +45,7 @@ class productController extends Controller {
                 'status_code' => 0
             ));
         }
-        $products = Product::where(array('category_id' => $id))->get();
+        $products = Product::where(array('category_id' => $id))->get(array('id','name','price','category_id'));
         return response()->json(array(
             'error' => false,
             'products' => $products,
