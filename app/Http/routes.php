@@ -14,3 +14,26 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//Route::get('/v1/products', function () {
+//    return view('welcome');
+//});
+
+
+//Route::get('/v1/products', [function() {
+//
+//$products = App\Model\Product::all();
+////$users = DB::table('products')->get();
+////print_r($users);exit;
+//    $products = array();
+//return Response::json(array(
+//        'error' => false,
+//        'products' => $products,
+//        'status_code' => 200
+//    ));
+//exit;
+//}]);
+
+// API routes...
+Route::get('/v1/products/', 'productController@index');
+Route::get('/v1/products/{id?}', 'productController@get');
+
