@@ -11,19 +11,16 @@ class Product extends Model
      *
      * @var array
      */
+    
+    protected $product = 'products';
+    
     protected $fillable = [
         'name', 'price', 'category_id',
-    ];
+    ];    
     
-    protected function categories(){
-        return $this->belongsTo('Category' , 'category_id'); // links this->category_id to category.id
-//        return $this->belongsTo(\App\Model\Category::class);
+    public function category(){
+        return $this->belongsTo('Category');
     }
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     
 }

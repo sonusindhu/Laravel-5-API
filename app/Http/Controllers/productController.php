@@ -13,6 +13,7 @@ class productController extends Controller {
     
     public function index() {
         $products = Product::all(); //array('id','name','price','category_id')
+//        print_r($products->categories());
         return response()->json(array(
             'error' => false,
             'products' => $products,
