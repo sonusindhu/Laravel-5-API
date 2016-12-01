@@ -42,3 +42,7 @@ Route::get('/v1/productsByCategory/{category_id?}', 'productController@getbycate
 Route::get('/v1/categories', 'categoryController@index');
 Route::get('/v1/category/{id?}', 'categoryController@get');
 
+//Users API routes
+Route::get('/v1/users/', 'userController@index');
+Route::get('/v1/user/{id?}', 'userController@get');
+
